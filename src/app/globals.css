@@ -2,20 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+img {
+  transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -ms-transition: 0.3s ease all;
+  -o-transition: 0.3s ease all;
+}
+
+img:hover {
+  scale: 102%;
+}
+
+.spinner {
+  position: relative;
+  width: 15.7px;
+  height: 15.7px;
+}
+
+.spinner div {
+  animation: spinner-4t3wzl 1.875s infinite backwards;
+  background-color: #eea21c;
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.spinner div:nth-child(1) {
+  animation-delay: 0.15s;
+  background-color: rgba(238, 162, 28, 0.9);
+}
+
+.spinner div:nth-child(2) {
+  animation-delay: 0.3s;
+  background-color: rgba(238, 162, 28, 0.8);
+}
+
+.spinner div:nth-child(3) {
+  animation-delay: 0.45s;
+  background-color: rgba(238, 162, 28, 0.7);
+}
+
+.spinner div:nth-child(4) {
+  animation-delay: 0.6s;
+  background-color: rgba(238, 162, 28, 0.6);
+}
+
+.spinner div:nth-child(5) {
+  animation-delay: 0.75s;
+  background-color: rgba(238, 162, 28, 0.5);
+}
+
+@keyframes spinner-4t3wzl {
+  0% {
+    transform: rotate(0deg) translateY(-200%);
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  60%,
+  100% {
+    transform: rotate(360deg) translateY(-200%);
+  }
 }
